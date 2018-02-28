@@ -1,0 +1,26 @@
+public void actionPerformed(ActionEvent evt)
+	{
+		Object source = evt.getSource();//取得事件源
+		if (source == file[0]) //open
+		{
+			JFileChooser chooser = new JFileChooser();
+			chooser.setCurrentDirectory(new File("."));
+			chooser.setFileFilter(new javax.swing.filechooser.FileFilter()
+			{
+				public boolean accept(File f)
+				{
+					return f.getName().toLowerCase().endsWith(".gif");
+				}
+				public String getDescription()
+				{
+					return "GIF Images";
+				}
+			});
+			int r = chooser.showOpenDialog(this);
+			if(r == JFileChooser.APPROVE_OPTION)
+			{
+				String name = chooser.getSelectedFile().getName();
+				label.setIcon(name);
+			}
+		}
+	ELSE
