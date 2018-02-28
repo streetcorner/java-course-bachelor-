@@ -1,0 +1,6 @@
+javac HelloApplication.java
+java HelloApplication
+
+javac HelloApplication.java
+
+AppletViewer HelloApplet.html
